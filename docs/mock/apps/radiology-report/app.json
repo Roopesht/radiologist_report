@@ -1,0 +1,14 @@
+{
+  "name": "radiology-report",
+  "title": "Radiology Report",
+  "spec": "docs/project/context.md",
+  "walkthroughs": [
+    {
+      "id": "create-report",
+      "title": "Create a report from two tags",
+      "description": "Start, enter the patient name, add the tags Li15.30 and P, then create the report.",
+      "sequenceFile": "sequences/create-report.json",
+      "seedData": "mock-app/mock-data/seeds/create-report.json"
+    }
+  ]
+}

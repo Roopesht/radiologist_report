@@ -1,0 +1,5 @@
+[
+  {"code":"S01","name":"Patient details","section":"REQ-267","type":"form","mode":"edit","buttons":["Save"],"fields":["Name","Age/Sex","Referred by","Date","UHID NO","Sr. No"]},
+  {"code":"S02","name":"Enter tags","section":"REQ-268, REQ-270","type":"form","mode":"edit","buttons":["Add tag","Create report"],"fields":["Tag"]},
+  {"code":"S03","name":"Report","section":"REQ-273, REQ-274","type":"report","mode":"view","buttons":[],"fields":[]}
+]

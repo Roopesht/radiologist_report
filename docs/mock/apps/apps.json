@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "radiology-report",
+      "title": "Radiology Report",
+      "platform": "desktop"
+    }
+  ]
+}

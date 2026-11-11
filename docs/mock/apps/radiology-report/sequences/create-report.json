@@ -1,0 +1,43 @@
+{
+  "id": "create-report",
+  "title": "Create a report from two tags",
+  "startStep": "patient",
+  "completionMessage": "The report is complete with header, findings, one impression, signature and note. In the real flow the radiologist reviews it before issue (not defined in the spec).",
+  "steps": {
+    "patient": {
+      "user": "radiologist",
+      "screen": "S01",
+      "proposedAction": "Check the patient name and save",
+      "infoPanel": [{ "key": "patient.name", "label": "Patient" }],
+      "actions": { "save-patient": { "performedText": "entered the patient name {patient.name}", "nextStep": "tag-one" } }
+    },
+    "tag-one": {
+      "user": "radiologist",
+      "screen": "S02",
+      "proposedAction": "Add the tag Li15.30",
+      "actions": { "add-first": { "performedText": "added the tag Li15.30", "nextStep": "tag-two", "stateChange": { "tags.first": { "set": "Li15.30" } } } }
+    },
+    "tag-two": {
+      "user": "radiologist",
+      "screen": "S02",
+      "proposedAction": "Add the tag P",
+      "infoPanel": [{ "key": "tags.first", "label": "First tag" }],
+      "actions": { "add-second": { "performedText": "added the tag P", "nextStep": "create", "stateChange": { "tags.second": { "set": "P" } } } }
+    },
+    "create": {
+      "user": "radiologist",
+      "screen": "S02",
+      "proposedAction": "Click Create report",
+      "infoPanel": [{ "key": "tags.first", "label": "First tag" }, { "key": "tags.second", "label": "Second tag" }],
+      "actions": { "create-report": { "performedText": "created the report", "nextStep": "report" } }
+    },
+    "report": {
+      "user": "radiologist",
+      "screen": "S03",
+      "proposedAction": "Read the finished report",
+      "notDefined": "Whether the radiologist reviews or approves the report before issue, and the output format (screen, .docx, PDF), are not defined in the spec.",
+      "performedText": "read the report",
+      "nextStep": null
+    }
+  }
+}

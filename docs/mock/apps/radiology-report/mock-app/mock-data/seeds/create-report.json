@@ -1,0 +1,10 @@
+{
+  "_sample": "Sample data only. Names, ids and numbers are invented. Wording is copied from the sample report in docs/project/source.",
+  "patient": { "name": "Ramesh Kumar", "age": "45", "sex": "Male", "referredBy": "Dr. A. Sharma", "date": "14-Sep-26", "uhid": "UH100234", "srNo": "112" },
+  "tags": { "first": "", "second": "" },
+  "report": {
+    "liver": "Liver is mildly enlarged in size (15.30 cm) and shows normal echotexture. No focal mass lesion seen. Intrahepatic biliary radicals are normal. Portal vein is normal.",
+    "pancreas": "Pancreas is normal in size and echotexture. Main pancreatic duct is normal.",
+    "impression": "Mild Hepatomegaly."
+  }
+}
