@@ -1,3 +1,9 @@
 # KNM
 .claude/requirements.json
 .knm/
+
+# env and local data
+.env
+**/.env
+apps/api/data/
+node_modules/

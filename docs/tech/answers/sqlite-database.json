@@ -1,0 +1,15 @@
+{
+  "title": "Module configuration",
+  "description": "Answers are used to configure the modules you are adding.",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "sqlite-database.DATABASE_URL",
+      "type": "text",
+      "text": "SQLite / libSQL database: Database URL (file:./data/app.db for a local file, libsql://... for Turso)?",
+      "help": "Config key: DATABASE_URL. Leave empty to use the default: file:./data/app.db",
+      "required": false,
+      "answer": "file:./data/app.db"
+    }
+  ]
+}

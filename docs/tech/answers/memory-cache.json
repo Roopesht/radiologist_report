@@ -1,0 +1,15 @@
+{
+  "title": "Module configuration",
+  "description": "Answers are used to configure the modules you are adding.",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "memory-cache.CACHE_TTL_SECONDS",
+      "type": "text",
+      "text": "In-memory cache: How many seconds may a cached response be reused?",
+      "help": "Config key: CACHE_TTL_SECONDS. Leave empty to use the default: 30",
+      "required": false,
+      "answer": "30"
+    }
+  ]
+}
