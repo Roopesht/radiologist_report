@@ -15,6 +15,8 @@ Acceptance:
 - Tags with options (side, size range, grade, calyx) store their option sets
 - A change to a rule is used by the next report generated
 - No tag wording exists outside this place
+- Radiologists and Admins can create, edit and manage abbreviation rules
+- Every abbreviation rule change is versioned and audited, recording who made the change, what changed and when
 
 ## Order
 1 of 9 (first: every later story reads the rules)
@@ -22,7 +24,7 @@ Acceptance:
 ## Source documents
 docs/project/source/ (Abbreviation Rules v4, whole-abdomen male/female reports, sample report, sample.jpeg)
 
-## Open questions
-- Who edits the rules: only the radiologist or an admin role? (not in sources)
-- Is a rule change versioned or audited? (not in sources)
-- PO (Pankaj) to answer before approval.
+## Decisions (project assumptions)
+These two decisions were not in the sources. They are project assumptions adopted while the product owner (Pankaj) is unavailable. Pankaj's confirmation is still pending and must be obtained before approval.
+- Who edits the rules: Radiologists and Admins both create, edit and manage abbreviation rules. (assumption, PO confirmation pending)
+- Versioning and audit: every rule change is versioned and audited, recording who made it, what changed and when. (assumption, PO confirmation pending)
