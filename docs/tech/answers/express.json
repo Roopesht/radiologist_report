@@ -1,0 +1,15 @@
+{
+  "title": "Module configuration",
+  "description": "Answers are used to configure the modules you are adding.",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "express.PORT",
+      "type": "text",
+      "text": "Express (Node API framework): Port the API listens on?",
+      "help": "Config key: PORT. Leave empty to use the default: 3000",
+      "required": false,
+      "answer": null
+    }
+  ]
+}

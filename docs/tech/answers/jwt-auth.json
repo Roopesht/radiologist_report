@@ -1,0 +1,15 @@
+{
+  "title": "Module configuration",
+  "description": "Answers are used to configure the modules you are adding.",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "jwt-auth.JWT_SECRET",
+      "type": "text",
+      "text": "JWT authentication: JWT signing secret (a random string of at least 32 characters; leave empty and a random one is generated into the app's .env)?",
+      "help": "Config key: JWT_SECRET. Secret: not stored in the injection record; set it in your env file",
+      "required": true,
+      "answer": null
+    }
+  ]
+}

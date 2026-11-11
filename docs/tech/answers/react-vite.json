@@ -1,0 +1,15 @@
+{
+  "title": "Module configuration",
+  "description": "Answers are used to configure the modules you are adding.",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "react-vite.PORT",
+      "type": "text",
+      "text": "React + Vite (web framework): Port for the dev server?",
+      "help": "Config key: PORT. Leave empty to use the default: 5173",
+      "required": false,
+      "answer": null
+    }
+  ]
+}
