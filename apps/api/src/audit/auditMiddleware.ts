@@ -1,18 +1,22 @@
 import { createAuditTrail, AuditSink, consoleSink } from './auditTrail';
 
-export interface AuditRequest { method: string; path?: string; url?: string; tenantId?: string; auth?: { userId?: unknown }; user?: { id?: unknown } }
+export interface AuditRequest { method: string; path?: string; url?: string; originalUrl?: string; tenantId?: string; auth?: { userId?: unknown }; user?: { id?: unknown } }
 export interface AuditResponse { statusCode: number; on(event: 'finish', cb: () => void): unknown }
 
 // Records every state-changing request (not GET/HEAD/OPTIONS) after the response is sent: actor, tenant, route and status.
+// The route is read when the request arrives: routers rewrite req.url while they handle it, so a later read is only the
+// part under the router ("/" for POST /api/rules).
 export function createAuditMiddleware(sink: AuditSink = consoleSink) {
   const trail = createAuditTrail({ sink, onError: (err) => console.error('audit sink failed', err) });
   return (req: AuditRequest, res: AuditResponse, next: (err?: unknown) => void) => {
     if (!['GET', 'HEAD', 'OPTIONS'].includes(req.method.toUpperCase())) {
+      const method = req.method.toUpperCase();
+      const route = (req.originalUrl ?? req.url ?? req.path ?? '').split('?')[0];
       res.on('finish', () => {
         const who = req.auth?.userId ?? req.user?.id;
         void trail.record({
           actor: typeof who === 'string' && who ? who : 'anonymous',
-          action: `${req.method.toUpperCase()} ${req.path ?? req.url ?? ''}`,
+          action: `${method} ${route}`,
           tenantId: req.tenantId,
           meta: { status: res.statusCode }
         });
