@@ -1,0 +1,32 @@
+{
+  "entity_type": "workItem",
+  "entity_id": "WI-025",
+  "assigned_to": "8I5g2LKf6Dg3lf7F8yuWUbfS0vC2",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "long_text",
+      "text": "Which sex/title values are needed? req.md asks whether the list is only male/female or whether other values are needed (acceptance: male shows MR., female shows MRS.).",
+      "reason": "REQ-267 req.md open question; the approved acceptance does not define the full list, so the work item cannot fix the option set.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q2",
+      "type": "single_choice",
+      "text": "Is Sr. No. generated or typed by the user?",
+      "options": [
+        "Generated",
+        "Typed"
+      ],
+      "reason": "REQ-267 req.md open question; determines whether the header needs a generator or a free input field.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    }
+  ]
+}
