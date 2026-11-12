@@ -26,9 +26,9 @@ describe('app shell contract', () => {
     expect(container.firstChild).toBe(outer);
   });
 
-  it('works with the scaffold glue as it is (no modules registered yet: the not-found page)', () => {
+  it('works with the glue as it is (the root redirects to the rules page)', () => {
     render(<App Router={at('/')} />);
-    expect(screen.getByText('Page not found')).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Abbreviation rules' })).toBeTruthy();
   });
 
   it('a crashing page shows a generic message, never the error, and the shell survives', () => {

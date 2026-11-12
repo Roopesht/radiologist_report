@@ -1,0 +1,8 @@
+{
+  "name": "radiologist-report",
+  "private": true,
+  "description": "Starts the API (apps/api) and the web app (apps/web) together. Run from this folder: npm run dev",
+  "scripts": {
+    "dev": "node scripts/dev.js"
+  }
+}
