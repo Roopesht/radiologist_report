@@ -2,7 +2,7 @@
   "entity_type": "workItem",
   "entity_id": "WI-028",
   "assigned_to": "8I5g2LKf6Dg3lf7F8yuWUbfS0vC2",
-  "status": "pending",
+  "status": "completed",
   "questions": [
     {
       "id": "q1",
@@ -10,9 +10,10 @@
       "text": "What is the tag for the uterus line in the female report?",
       "reason": "REQ-269 acceptance requires the female uterus line to have a tag, but neither the requirement nor the source documents state one.",
       "required": true,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": "Use UT for the uterus line in female reports.\n\nReason: It is short and clearly represents Uterus.",
+      "answered_by": "Pua6ezZowteUtW37dndRPa890B93",
+      "answered_at": "2026-11-12T09:08:40.000Z",
+      "other": null
     },
     {
       "id": "q2",
@@ -24,9 +25,10 @@
       ],
       "reason": "Decides whether the tag engine accepts combined ovary tags or rejects them, which changes the validation rules and tests.",
       "required": true,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": "No",
+      "answered_by": "Pua6ezZowteUtW37dndRPa890B93",
+      "answered_at": "2026-11-12T09:08:40.000Z",
+      "other": null
     }
   ]
 }
