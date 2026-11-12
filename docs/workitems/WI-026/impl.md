@@ -19,7 +19,7 @@ Decision: DEC-301 · Feature: FEAT-1047
 - Tests (likely locations): web component tests under apps/web/tests/rules/, api contract tests under apps/api/tests/rules/.
 
 ## Behaviour to verify
-- All six header fields can be entered and saved.
+- Five header fields can be entered and saved; Sr. No is generated and saved.
 - Sex "male" shows MR.; "female" shows MRS.
 - Date field defaults to today in d-MMM-yy.
 - Sex value is available to the tag engine.
@@ -30,6 +30,6 @@ Decision: DEC-301 · Feature: FEAT-1047
 
 ## Assumptions
 - Sex list is male/female only. Acceptance criteria state only these two values; other values are out of scope.
-- Sr. No is typed, not generated. Acceptance says all header fields "can be entered", so typed input is the reading taken here. If it should be generated, this changes the plan.
+- Sr. No is generated, not typed. Confirmed in WI-025's answered Q&A (product owner, 2026-11-12). The generation rule (format, sequence) is not specified in the sources and is not decided here.
 - Name, referred-by, UHID and Sr. No are entered as free text. No validation rule is specified in REQ-267 or DEC-301; none is implemented here.
-- REQ-267 (req.md) still lists these open questions: sex/title list values, and whether Sr. No is generated or typed. The approved acceptance criteria answer the first (male/female only). The second is read as "typed" from "all header fields can be entered"; the product owner should confirm this if it is wrong.
+- REQ-267 (req.md) listed two open questions: sex/title list values, and whether Sr. No is generated or typed. Sex/title is male/female only (acceptance criteria and WI-025 Q&A). Sr. No is generated (WI-025 Q&A).
