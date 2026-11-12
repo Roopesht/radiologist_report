@@ -1,0 +1,36 @@
+{
+  "entity_type": "requirement",
+  "entity_id": "REQ-266",
+  "assigned_to": "8I5g2LKf6Dg3lf7F8yuWUbfS0vC2",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single_choice",
+      "text": "Which application is the primary one for REQ-266 (keep abbreviation rules in one place)? The rules store and report generation look like API and database work; the rules editing screen looks like web work.",
+      "options": [
+        "api (apps/api)",
+        "web (apps/web)"
+      ],
+      "reason": "The project has no applications registered in KNM (apps list is empty), and the primary application is required to create a work item. The repo has both apps/api and apps/web, and the requirement involves both a store and an editing screen, so the primary cannot be inferred.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q2",
+      "type": "multi_choice",
+      "text": "Which other applications does this work also touch? Choose none if only the primary application is affected.",
+      "options": [
+        "api (apps/api)",
+        "web (apps/web)"
+      ],
+      "reason": "Other applications are recorded on the work item alongside the primary. Pick only applications other than the primary chosen in q1.",
+      "required": false,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    }
+  ]
+}
