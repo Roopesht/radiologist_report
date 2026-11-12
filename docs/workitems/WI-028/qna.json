@@ -1,0 +1,32 @@
+{
+  "entity_type": "workItem",
+  "entity_id": "WI-028",
+  "assigned_to": "8I5g2LKf6Dg3lf7F8yuWUbfS0vC2",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "text",
+      "text": "What is the tag for the uterus line in the female report?",
+      "reason": "REQ-269 acceptance requires the female uterus line to have a tag, but neither the requirement nor the source documents state one.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q2",
+      "type": "single_choice",
+      "text": "Should O together with ROP or LOP be allowed?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "reason": "Decides whether the tag engine accepts combined ovary tags or rejects them, which changes the validation rules and tests.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    }
+  ]
+}
