@@ -1,0 +1,32 @@
+{
+  "entity_type": "testCase",
+  "entity_id": "TC-009",
+  "assigned_to": "Pua6ezZowteUtW37dndRPa890B93",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "long_text",
+      "text": "Acceptance 3 (the next report uses the saved wording; a report generated before a change is not altered) and acceptance 4 (no tag wording used by report generation outside the rules store) need a report generation interface. Which endpoint or function generates a report, and what is its input and output? Report generation does not exist in the code yet (WI-024 notes this).",
+      "reason": "Without a defined report-generation interface, the test steps for acceptance 3 and 4 would have to be invented. The plan cannot state expected results for them.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q2",
+      "type": "single_choice",
+      "text": "Acceptance 1 says every tag in Abbreviation Rules v4 (source 133) has findings text. Only 18 of the 49 source rows are verified and seeded (docs/workitems/WI-024/source-check.md). Should the test check the 18 verified rules, or wait until the other rows are clarified?",
+      "options": [
+        "Test the 18 verified rules now; the other rows are a known gap",
+        "Wait: no test for acceptance 1 until all source rows are clarified"
+      ],
+      "reason": "The expected result for acceptance 1 depends on the scope. Choosing one would be a guess.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    }
+  ]
+}
