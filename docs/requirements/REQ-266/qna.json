@@ -2,7 +2,7 @@
   "entity_type": "requirement",
   "entity_id": "REQ-266",
   "assigned_to": "8I5g2LKf6Dg3lf7F8yuWUbfS0vC2",
-  "status": "pending",
+  "status": "completed",
   "questions": [
     {
       "id": "q1",
@@ -14,9 +14,10 @@
       ],
       "reason": "The project has no applications registered in KNM (apps list is empty), and the primary application is required to create a work item. The repo has both apps/api and apps/web, and the requirement involves both a store and an editing screen, so the primary cannot be inferred.",
       "required": true,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": "api (apps/api)",
+      "answered_by": "Pua6ezZowteUtW37dndRPa890B93",
+      "answered_at": "2026-11-12T03:05:12.000Z",
+      "other": null
     },
     {
       "id": "q2",
@@ -28,9 +29,12 @@
       ],
       "reason": "Other applications are recorded on the work item alongside the primary. Pick only applications other than the primary chosen in q1.",
       "required": false,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": [
+        "web (apps/web)"
+      ],
+      "answered_by": "Pua6ezZowteUtW37dndRPa890B93",
+      "answered_at": "2026-11-12T03:05:12.000Z",
+      "other": null
     }
   ]
 }
