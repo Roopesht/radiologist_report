@@ -23,8 +23,5 @@ Steps:
 2. Run the tag engine for the same sex-specific tag.
 Expected: the engine receives sexCode "F" and resolves the female variant of the tag.
 
-### D3 - Changing sex on a draft changes what the engine receives
-Note: name and sex are fixed at creation for a saved draft (WI-026, Behaviour). This scenario only applies if the owner allows a sex change; until then it is not in scope.
-
 ## Pass criteria
 D1 and D2 pass against the real tag engine. Until the tag engine exists this test cannot pass and must not be marked passed.
