@@ -43,3 +43,15 @@ apps/web:
 ## 6. Assumptions
 - The typed input is a line in the web app (confirmed in REQ-268).
 - Findings order is fixed report order (confirmed by the product owner, per REQ-268).
+
+## 7. Known gap (noted at implementation)
+- L and R have no rules in the abbreviation rules store. The verified seed (apps/api/src/rules/sourceRules.ts) omits them, and docs/workitems/WI-024/source-check.md lists the kidney rows as waiting for clarification.
+- Effect: typing L or R reports "no rule in the abbreviation rules yet" instead of kidney wording. REQ-268 acceptance for L and R is NOT met until those rules are entered.
+- Not fixed here: the rules are REQ-266 data, and the wording is not invented in code.
+- REQ-266 is not yet approved.
+
+## 8. Implementation record
+- API: apps/api/src/rules/tagExpansion.ts (new); apps/api/src/rules/rulesRouter.ts (POST /api/rules/expand); apps/api/tests/rules/expansion.test.ts (new); apps/api/tests/rules/api.test.ts (expansion endpoint tests).
+- Web: apps/web/src/rules/TagEntryPanel.tsx (new); apps/web/src/state/rulesClient.ts (expandTags); apps/web/src/app/router.tsx (route /rules/expand); apps/web/tests/rules/TagEntryPanel.test.tsx (new).
+- Tests: rules suite 47/47 (API); TagEntryPanel 4/4 (web). Type-check clean in both apps.
+- Pre-existing, not from this item: web tests/rules/router.test.tsx fails (failed before this work).
