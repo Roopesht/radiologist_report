@@ -2,23 +2,28 @@
 
 Requirement: REQ-267 - Enter patient details and sex
 Work item: none linked
+Revision: S7 (sex-specific tag engine) moved to TC-012, which is deferred until the tag engine exists.
 
 ## Scope
 Patient header on the report form: name, age/sex, referred by, date, UHID and Sr. No.
-Sex selects the title (MR./MRS.) and is available to the tag engine.
+Sex selects the title (MR./MRS.). The date is shown in d-MMM-yy.
 
 Out of scope until the open questions in REQ-267 are answered:
 - Sex values other than male and female.
-- Whether Sr. No is generated or typed.
+- Whether Sr. No is generated or typed. (A draft shows "Assigned when the report is issued"; no number is entered on the form.)
 
 ## Scenarios
 
-### S1 - All header fields can be entered
-Precondition: a new report is open on the patient details header.
+### S1 - A saved new report reopens with every header field preserved
+Precondition: no report is open.
 Steps:
-1. Enter Name, Age, Sex, Referred by, Date, UHID and Sr. No. with sample values.
-2. Save or leave the header and reopen it.
-Expected: every field keeps the entered value. Nothing is dropped or truncated.
+1. Open a new report. Enter Name, Age, Sex (Male), Referred by, Date and UHID with sample values.
+2. Save patient details.
+3. Leave the screen and open the saved report again from its address.
+Expected:
+- The save creates the report as a draft.
+- After reopening, every field shows the value that was saved: Name, Age, Sex (Male), Title (MR.), Referred by, Date, UHID.
+- Sr. No shows "Assigned when the report is issued".
 
 ### S2 - Male shows MR.
 Steps:
@@ -36,21 +41,26 @@ Steps:
 Expected: the title changes from "MR." to "MRS.". No stale title remains.
 
 ### S5 - Date defaults to today in d-MMM-yy
-Precondition: a new report is opened on a known date (for example 14-Sep-26).
+Precondition: a new report is opened.
 Steps:
 1. Open a new report without touching the Date field.
-Expected: Date shows today's date in d-MMM-yy format (for example "14-Sep-26").
+Expected: the Date field holds today's date, and the text under it shows today's date in d-MMM-yy (for example "Shown as 14-Sep-26" when today is 14 Sep 2026).
 
-### S6 - Date can be changed
+### S6 - A changed date is saved and shown again
+Precondition: a saved draft exists with Date 12-Nov-26.
 Steps:
-1. Overwrite the default Date with another valid date.
-Expected: the entered date is kept and displayed in d-MMM-yy format.
+1. Change the Date to 20-Nov-26 on screen. The text under the field shows "Shown as 20-Nov-26".
+2. Save changes.
+3. Leave the screen and open the same report again.
+Expected:
+- The save sends the new date.
+- After the save, the screen shows "Shown as 20-Nov-26".
+- After reopening, the Date field holds 2026-11-20 and shows "Shown as 20-Nov-26".
 
-### S7 - Sex is available to the tag engine
-Steps:
-1. Select Sex = Male and run the tag engine for a sex-specific tag.
-2. Repeat with Sex = Female.
-Expected: the tag engine receives the selected sex for both values and resolves the sex-specific tags accordingly.
+## Automated coverage
+- S1, S6 (screen save and reopen): apps/web/tests/reports/TC011.screen.test.tsx
+- S2 to S5 (titles, date default and display): apps/web/tests/reports/PatientDetailsForm.test.tsx
+- Save, PATCH body and API rules: apps/web/tests/reports/reportForm.test.ts and apps/api/tests/reports/*.test.ts
 
 ## Pass criteria
-All scenarios S1 to S7 pass. Any failure blocks the requirement's acceptance.
+All scenarios S1 to S6 pass. Any failure blocks the requirement's acceptance.
