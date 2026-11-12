@@ -1,6 +1,6 @@
 # WI-026: Patient details and sex entry form
 
-Applications: web (primary), api (other)
+Applications: web (primary), api
 
 Requirement: REQ-267 (Enter patient details and sex)
 Decision: DEC-301 · Feature: FEAT-1047
@@ -16,7 +16,7 @@ Decision: DEC-301 · Feature: FEAT-1047
 - web: client state and API calls, apps/web/src/state/rulesClient.ts and apps/web/src/rules/ (sex value read by the tag engine).
 - api: request/response schema for the report header (apps/api/src/db/schema.ts) and the glue routes (apps/api/src/glue/routes.ts) if header fields are stored with the report.
 - api: validation for the sex value (male/female only for now).
-- Tests: web component tests under apps/web/tests/rules/, api contract tests under apps/api/tests/rules/.
+- Tests (likely locations): web component tests under apps/web/tests/rules/, api contract tests under apps/api/tests/rules/.
 
 ## Behaviour to verify
 - All six header fields can be entered and saved.
@@ -31,5 +31,5 @@ Decision: DEC-301 · Feature: FEAT-1047
 ## Assumptions
 - Sex list is male/female only. Acceptance criteria state only these two values; other values are out of scope.
 - Sr. No is typed, not generated. Acceptance says all header fields "can be entered", so typed input is the reading taken here. If it should be generated, this changes the plan.
-- Name, referred-by, UHID and Sr. No are free text with no validation beyond non-empty where required by the report.
-- REQ-267 open question "PO to answer before approval" is treated as resolved by the approved acceptance criteria.
+- Name, referred-by, UHID and Sr. No are entered as free text. No validation rule is specified in REQ-267 or DEC-301; none is implemented here.
+- REQ-267 (req.md) still lists these open questions: sex/title list values, and whether Sr. No is generated or typed. The approved acceptance criteria answer the first (male/female only). The second is read as "typed" from "all header fields can be entered"; the product owner should confirm this if it is wrong.
